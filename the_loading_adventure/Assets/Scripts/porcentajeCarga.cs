@@ -11,6 +11,8 @@ public class porcentajeCarga : MonoBehaviour
     public float tiempo = 0.25f;
     Text texto;
 
+    public puntuacion puntuacion;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -32,6 +34,8 @@ public class porcentajeCarga : MonoBehaviour
             yield return new WaitForSeconds(tiempo);
             porcentaje++;
         }
+
+        PlayerPrefs.SetInt("score", puntuacion.score);
 
         SceneManager.LoadScene("player");
 
